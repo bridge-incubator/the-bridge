@@ -1,0 +1,25 @@
+{
+  "name": "the-bridge",
+  "version": "1.0.0",
+  "description": "The Bridge",
+  "main": "index.js",
+  "scripts": {
+    "dependencies": "yarn install && bundle install",
+    "dev": "rm -rf _site && concurrently \"yarn watch:css\" \"bundler exec jekyll serve --incremental --livereload --config _config.yml,_config_dev.yml\"",
+    "build": "yarn build:css && bundle exec jekyll build",
+    "watch:css": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css --watch",
+    "build:css": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css --minify"
+  },
+  "author": "jeremyzilar",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.17",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^9.1.2",
+    "cssnano": "^7.0.2",
+    "postcss": "^8.4.38",
+    "postcss-scss": "^4.0.9",
+    "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {}
+}

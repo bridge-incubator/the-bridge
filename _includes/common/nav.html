@@ -1,0 +1,17 @@
+<nav
+  class="{% if include.mobile %}space-y-6{% else %}flex space-x-6{% endif %}"
+>
+  <ul
+    class="{% if include.mobile %}flex flex-col space-y-6{% else %}flex space-x-6{% endif %} uppercase"
+  >
+    {% for item in site.data.nav %}
+    <li>
+      <a
+        class="no-underline underline-offset-4 whitespace-nowrap {% if include.mobile %}text-sm{% else %}text-xs{% endif %}"
+        href="{{ site.baseurl }}/{{ item.slug }}"
+        >{{ item.title }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

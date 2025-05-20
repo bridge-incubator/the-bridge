@@ -1,0 +1,62 @@
+<section
+  id="goals"
+  class="py-24 px-5 tablet:py-24 tablet:px-16 desktop:py-24 desktop:px-32 desktop-lg:py-32 desktop-lg:px-40 bg-[#FFFFFF]"
+>
+  <div class="max-w-full px-0">
+    <div class="grid grid-cols-4 tablet:grid-cols-12 gap-0">
+      <div class="col-span-4 tablet:col-span-12">
+        <div class="space-y-14">
+          <h3
+            class="font-mono text-caption-mobile tablet:text-caption uppercase"
+          >
+            Our Goals
+          </h3>
+          <p class="text-heading-mobile tablet:text-heading font-super">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+            <span class="text-[#fa8368]"
+              >Reach out if you want to get involved or have ideas on ways to
+              measure positive impact.</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="pt-28">
+      <div
+        class="grid grid-cols-4 tablet:grid-cols-12 gap-y-10 desktop:gap-y-28 gap-x-10"
+      >
+        {% for item in site.data.goals %}
+        <div class="col-span-4 tablet:col-span-12 tablet-lg:col-span-6">
+          <div class="goal flex pt-6 gap-4 border-t-[1px] border-black">
+            <div class="flex flex-col justify-between">
+              <div class="flex gap-x-2 desktop:flex-col">
+                <div
+                  class="text-body-bold-mobile tablet:text-body-bold font-super text-[#fa8368]"
+                >
+                  {{ item.num }}
+                </div>
+                <h4
+                  class="p-0 text-body-bold-mobile tablet:text-body-bold font-super"
+                >
+                  {{ item.title }}
+                </h4>
+              </div>
+              <p class="font-mono text-caption-mobile desktop-lg:text-caption">
+                {{ item.desc }}
+              </p>
+            </div>
+            <img
+              class="w-[104px] desktop:w-[193px] h-full object-cover"
+              src="{{ item.img | relative_url }}"
+              alt="{{ item.title }}"
+            />
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
