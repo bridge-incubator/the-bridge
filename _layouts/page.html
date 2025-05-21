@@ -7,13 +7,11 @@ layout: default
 <main class="py-24 tablet:py-24 bg-[#F9F2EA]">
   <div class="px-5 tablet:px-24 desktop:px-32 desktop-lg:px-40">
     <div class="space-y-12 tablet:space-y-16">
-      <h1 class="font-mono text-caption-mobile tablet:text-caption uppercase">
+      <h1 class="font-mono text-xs tablet:text-sm uppercase">
         {{ page.title }}
       </h1>
       {% if page.deck %}
-      <p class="text-heading-mobile tablet:text-heading font-super">
-        {{ page.deck }}
-      </p>
+      <p class="text-md tablet:text-xl font-super">{{ page.deck }}</p>
 
       <div class="content text-body-mobile tablet:text-body space-y-8">
         {{ content }}
@@ -27,7 +25,7 @@ layout: default
             <li>
               <a
                 href="#{{ item.slug }}"
-                class="text-caption-mobile tablet:text-caption text-blue-600 font-mono uppercase"
+                class="text-xs tablet:text-sm text-blue-600 font-mono uppercase"
                 >{{ item.text }}</a
               >
             </li>
@@ -42,9 +40,7 @@ layout: default
             "section_id", section.slug | where: "parent", page_name | first %}
             {% if section_file %}
             <section id="{{ section.slug }}" class="scroll-mt-24">
-              <h2
-                class="text-heading-mobile tablet:text-heading font-super mb-9"
-              >
+              <h2 class="text-md tablet:text-xl font-super mb-9">
                 {{ section.text }}
               </h2>
               <div class="content text-body-mobile tablet:text-body space-y-8">

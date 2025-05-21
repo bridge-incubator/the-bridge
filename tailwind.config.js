@@ -9,8 +9,9 @@ module.exports = {
   ],
   theme: {
     fontSize: {
+      xs: ["0.875rem", { lineHeight: "1.25", letterSpacing: "0.06em" }],
       sm: ["1.25rem", { lineHeight: "1.6", letterSpacing: "0.06em" }],
-      md: ["1.5rem", { lineHeight: "1.5", letterSpacing: "0.02em" }],
+      md: ["1.5rem", { lineHeight: "32px", letterSpacing: "0.02em" }],
       lg: ["2rem", { lineHeight: "1.4", letterSpacing: "0.02em" }],
       xl: ["2.5rem", { lineHeight: "48.48px" }],
       "2xl": ["3rem", { lineHeight: "60.48px" }],
@@ -19,7 +20,7 @@ module.exports = {
       "5xl": ["6rem", { lineHeight: "120.48px" }],
       "6xl": ["7rem", { lineHeight: "140.48px" }],
       heading: ["2.5rem", { lineHeight: "48.48px" }],
-      body: ["1.5rem", { lineHeight: "37.68px", letterSpacing: "0.02em" }],
+      body: ["2.5rem", { lineHeight: "37.68px", letterSpacing: "0.02em" }],
       "body-bold": [
         "1.5rem",
         { lineHeight: "37.92px", letterSpacing: "0.02em" },

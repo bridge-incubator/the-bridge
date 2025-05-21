@@ -2,7 +2,7 @@
   {% if include.type == 'small' %}
   <a
     href="{{ include.url }}"
-    class="font-mono uppercase text-caption-mobile tablet:text-caption inline-block py-2 px-4 tablet:px-8 text-center rounded-md no-underline hover:underline underline-offset-4 bg-[#BBD2FE] text-black"
+    class="font-mono uppercase text-xs tablet:text-sm inline-block py-2 px-4 tablet:px-8 text-center rounded-md no-underline hover:underline underline-offset-4 bg-[#BBD2FE] text-black"
     {%
     if
     include.target
@@ -16,7 +16,7 @@
   {% else %}
   <a
     href="{{ include.url }}"
-    class="font-mono uppercase text-caption-mobile tablet:text-caption inline-block w-full tablet:w-auto py-4 px-14 tablet:px-24 text-center rounded-md no-underline hover:underline bg-black text-white"
+    class="font-mono uppercase text-xs tablet:text-sm inline-block w-full tablet:w-auto py-4 px-14 tablet:px-24 text-center rounded-md no-underline hover:underline bg-black text-white"
     {%
     if
     include.target
