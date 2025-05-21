@@ -848,6 +848,11 @@ video {
   background-color: rgb(167 243 208 / var(--tw-bg-opacity, 1));
 }
 
+.bg-sky-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity, 1));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -863,24 +868,19 @@ video {
   background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
 }
 
-.bg-amber-50 {
+.bg-slate-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1));
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1));
 }
 
-.bg-amber-400 {
+.bg-pink-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(251 191 36 / var(--tw-bg-opacity, 1));
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity, 1));
 }
 
-.bg-sky-400 {
+.bg-zinc-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity, 1));
-}
-
-.bg-sky-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity, 1));
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover {
@@ -1079,6 +1079,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-zinc-900 {
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -1381,10 +1386,6 @@ header {
     grid-column: span 9 / span 9;
   }
 
-  .tablet\:min-h-\[80vh\] {
-    min-height: 80vh;
-  }
-
   .tablet\:w-auto {
     width: auto;
   }
@@ -1499,10 +1500,6 @@ header {
 }
 
 @media (min-width: 1024px) {
-  .desktop\:min-h-\[90vh\] {
-    min-height: 90vh;
-  }
-
   .desktop\:w-\[193px\] {
     width: 193px;
   }
