@@ -143,3 +143,7 @@ header {
 .section-homepage {
   @apply py-16 px-5 tablet:py-20 tablet:px-16 desktop:px-32 desktop:pt-28 desktop:pb-32 desktop-lg:px-40;
 }
+
+.section {
+  @apply py-8 px-5 tablet:px-16 desktop:px-32 desktop-lg:px-40;
+}
