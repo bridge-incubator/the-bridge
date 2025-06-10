@@ -6,6 +6,11 @@
 
 https://github.com/bridge-incubator/the-bridge
 
+### Pre-requisites
+
+* Jekyll: https://jekyllrb.com/docs/installation/
+* NPM: https://www.npmjs.com/
+
 ### Local Setup
 
 1. Install dependencies:
