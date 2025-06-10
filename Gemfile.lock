@@ -80,7 +80,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-postcss (0.5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
     jekyll-seo-tag (2.8.0)
@@ -173,13 +172,11 @@ PLATFORMS
 
 DEPENDENCIES
   hash-joiner
-  jekyll (>= 4.3.3)
-  jekyll-postcss
+  jekyll
   jekyll-seo-tag
   jekyll-sitemap
   jemoji
   json
-  tzinfo-data
   webrick
 
 BUNDLED WITH
