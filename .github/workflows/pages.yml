@@ -36,9 +36,12 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: Compile SCSS to CSS
+        run: sass ./_assets/tailwind.scss ./_assets/tailwind.css
+
       - name: Build Tailwind CSS
         run: |
-          npx tailwindcss -i ./_assets/tailwind.css -o ./assets/css/main.css --minify
+          npx tailwindcss -i ./_assets/tailwind.css -o ./_assets/css/main.css --minify
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
