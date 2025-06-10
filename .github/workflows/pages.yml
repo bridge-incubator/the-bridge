@@ -31,16 +31,13 @@ jobs:
       - name: Install NPM deps
         run: npm ci
 
-      ## - name: Clean vendor dir
-        ## run: rm -rf vendor
-
       - name: Install Jekyll deps
         run: |
           gem install bundler
           bundle install
 
       - name: Compile SCSS to CSS
-        run: npx sass ./assets/css/tailwind.scss ./assets/css/tailwind.css
+        run: npx sass ./_assets/css/tailwind.scss ./assets/css/tailwind.css
 
       - name: Build Tailwind CSS
         run: |
