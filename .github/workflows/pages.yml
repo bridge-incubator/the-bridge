@@ -1,0 +1,34 @@
+name: Deploy Jekyll with TailwindCSS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1
+        bundler-cache: true
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Install NPM deps
+      run: npm ci
+
+    - name: Install Jekyll deps
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Build Tailwind CSS
