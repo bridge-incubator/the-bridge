@@ -37,7 +37,7 @@ jobs:
           bundle install
 
       - name: Compile SCSS to CSS
-        run: npx sass ./_assets/tailwind.scss ./_assets/tailwind.css
+        run: npx sass ./_assets/css/tailwind.scss ./_assets/css/tailwind.css
 
       - name: Build Tailwind CSS
         run: |
