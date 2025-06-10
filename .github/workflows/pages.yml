@@ -31,8 +31,8 @@ jobs:
       - name: Install NPM deps
         run: npm ci
 
-      - name: Clean vendor dir
-        run: rm -rf vendor
+      ## - name: Clean vendor dir
+        ## run: rm -rf vendor
 
       - name: Install Jekyll deps
         run: |
