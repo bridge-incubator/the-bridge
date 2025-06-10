@@ -13,6 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 title: The Bridge
 email: jeremyzilar@gmail.com
 tagline: "An experimental model for self-governance, co-programming, and resource-sharing between creative and cultural communities in Civic Tech."
@@ -34,8 +35,8 @@ markdown: kramdown
 plugins:
   - jemoji
   - jekyll-postcss
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  ## - jekyll-seo-tag
+  ## - jekyll-sitemap
 
 sass:
   sass_dir: _sass
