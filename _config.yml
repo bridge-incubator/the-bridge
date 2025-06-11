@@ -21,6 +21,8 @@ description: "An experimental model for self-governance, co-programming, and res
 image: /assets/media/opengraph.png
 baseurl: "/the-bridge"
 url: "https://bridge-incubator.github.io"
+# baseurl: ""
+# url: "https://bridgeurl.com"
 github_username: bridge-incubator
 
 include: ["_pages"]
