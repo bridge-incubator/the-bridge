@@ -19,8 +19,8 @@ email: jeremyzilar@gmail.com
 tagline: "An experimental model for self-governance, co-programming, and resource-sharing between creative and cultural communities in Civic Tech."
 description: "An experimental model for self-governance, co-programming, and resource-sharing between creative and cultural communities in Civic Tech."
 image: /assets/media/opengraph.png
-baseurl: ""
-url: "https://the-bridge.github.io"
+baseurl: "/the-bridge"
+url: "https://bridge-incubator.github.io"
 github_username: bridge-incubator
 
 include: ["_pages"]
@@ -32,7 +32,8 @@ collections:
 # Build settings
 markdown: kramdown
 # theme: minima
-plugins: []
+plugins:
+  []
   ## - jemoji
   ## - jekyll-postcss
   ## - jekyll-seo-tag
