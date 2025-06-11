@@ -6,16 +6,15 @@
   <title>{{ site.title }} – The Bridge</title>
 
   <!-- Tailwind CSS -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-<link
-  rel="stylesheet"
-  href="{{ site.baseurl }}/_assets/css/tailwind.css"
-/>
-<!-- Custom CSS -->
-<link
-  rel="stylesheet"
-  href="{{ site.baseurl }}/_assets/css/main.css"
-/>
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/tailwind.css' | relative_url }}?{{ site.time | date: '%Y%m%j%H%M%S' }}"
+  />
+  <!-- Custom CSS -->
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/main.css' | relative_url }}?{{ site.time | date: '%Y%m%j%H%M%S' }}"
+  />
 
   <!-- icons -->
   <link rel="shortcut icon" href="/assets/img/favicons/apple-touch-icon.png" />
