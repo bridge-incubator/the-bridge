@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: The Bridge
-email: jeremyzilar@gmail.com
-tagline: "An experimental model for self-governance, co-programming, and resource-sharing between creative and cultural communities in Civic Tech."
-description: "An experimental model for self-governance, co-programming, and resource-sharing between creative and cultural communities in Civic Tech."
+email: TBD
+tagline: "TBD"
+description: "TBD"
 image: /assets/media/opengraph.png
 baseurl: ""
 url: "https://bridgecivictech.org/"
