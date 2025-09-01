@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/vox';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+#home {
+	background-image: radial-gradient(
+		at 50% 33%,
+		color-mix(in oklab, var(--color-tertiary-500) 30%, transparent) 0px,
+		transparent 100%
+	);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
