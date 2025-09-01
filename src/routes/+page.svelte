@@ -18,10 +18,10 @@
 			>
 				<h1 class="mb-6 font-mono text-lg text-primary-950-50 uppercase">What we do</h1>
 				<p class="text-2xl font-light md:text-3xl">
-					<span class="font-semibold">The Bridge works with nonprofits and government agencies</span
-					>
-					to improve the delivery of public services through a combination of human-centered design,
-					agile development, collaboration, and coaching.
+					<span class="font-semibold"
+						>The Bridge works with nonprofits and government agencies to improve the delivery of
+						public services</span
+					> through a combination of human-centered design, agile development, collaboration, and coaching.
 				</p>
 			</div>
 		</div>
