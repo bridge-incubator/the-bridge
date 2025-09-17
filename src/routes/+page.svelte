@@ -45,11 +45,11 @@
 				</p>
 				<a
 					class="mt-8"
-					href="https://forms.gle/Lcsv3mxgavo4MDNV7"
+					href="https://docs.google.com/forms/d/e/1FAIpQLSdudX5kV3wBst5tPz1F_0gPFiF6RHygp5HpW5nR_HgTmej_ww/viewform?usp=dialog"
 					><button
 						type="button"
 						class=" btn preset-filled-secondary-950-50 btn-lg font-bold uppercase"
-						>Partner with us</button
+						>Work with us</button
 					></a
 				>
 			</div>
@@ -73,12 +73,12 @@
 					needed to launch it.
 				</p>
 				<a
-					class=" mt-8"
-					href="https://forms.gle/q7JbisEPpyayyNdUA"
+					class="mt-8"
+					href="https://docs.google.com/forms/d/e/1FAIpQLSd8NHP3aGFyCQ-MX_XlRhT2v4FmSEmy7kI4Si83BmWp9aIHUQ/viewform?usp=dialog" 
 					><button
 						type="button"
 						class="btn preset-filled-tertiary-950-50 btn-lg font-bold uppercase"
-						>Get in touch</button
+						>Submit Ideas</button
 					></a
 				>
 			</div>
