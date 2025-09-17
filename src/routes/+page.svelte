@@ -74,7 +74,7 @@
 				</p>
 				<a
 					class=" mt-8"
-					href="https://forms.gle/ag1y6VVR5HXG53th9"
+					href="https://forms.gle/q7JbisEPpyayyNdUA"
 					><button
 						type="button"
 						class="btn preset-filled-tertiary-950-50 btn-lg font-bold uppercase"
