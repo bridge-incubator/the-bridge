@@ -86,6 +86,7 @@
 		>
 			<svg 
 				role="img"
+				viewBox="0 0 16 16"
 				xmlns="http://www.w3.org/2000/svg"
 				class="inline-block h-6 w-6 align-middle"
 				><title>The Bridge Civic Tech LinkedIn</title><path 
