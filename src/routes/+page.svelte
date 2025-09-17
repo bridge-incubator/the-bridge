@@ -45,7 +45,7 @@
 				</p>
 				<a
 					class="mt-8"
-					href="https://docs.google.com/forms/d/e/1FAIpQLSeMA6M_RllGHeKJKAei-9lVFJhia2eXcm-kqekc3MhaJlO62g/viewform"
+					href="https://forms.gle/Lcsv3mxgavo4MDNV7"
 					><button
 						type="button"
 						class=" btn preset-filled-secondary-950-50 btn-lg font-bold uppercase"
