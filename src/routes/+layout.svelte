@@ -53,7 +53,7 @@
 			nonprofits, and scalable infrastructure for the public.
 		</div>
 		<div class="">
-			Built by technologists who were recently doing this work at 18F, USDS, and TTS in the Federal
+			Built by technologists formerly at 18F and the Technology Transformation Service (TTS) in the Federal
 			Government.
 		</div>
 	</div>
