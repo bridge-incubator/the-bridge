@@ -12,6 +12,8 @@ Pushing to `main` builds the site, checks accessibility, then deploys to GitHub 
 
 The workflow also audits itself with [zizmor](https://docs.zizmor.sh/), and a finding blocks the deploy. Pin every action to a full commit hash with the version in a comment (`uses: owner/action@<sha> # v1.2.3`), and give jobs only the permissions they need. Dependabot (`.github/dependabot.yml`) proposes updates weekly.
 
+Every pull request also gets a preview build on Cloudflare Pages (project `the-bridge`, preview only; the live site stays on GitHub Pages). Cloudflare comments the preview URL on the PR. Share that link for review instead of running the site locally.
+
 ## Accessibility
 
 Every built page is checked with [Pa11y CI](https://github.com/pa11y/pa11y-ci) against WCAG 2 AA, using both the axe and HTML_CodeSniffer runners (`.pa11yci.json`). Any violation fails the workflow and blocks the deploy. To run it locally after `pnpm build`:
