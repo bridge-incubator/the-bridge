@@ -1,0 +1,54 @@
+name: Build, check accessibility, deploy
+
+on:
+  push:
+    branches: main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      # Serve the built site and run Pa11y CI (axe + HTML_CodeSniffer, WCAG 2 AA)
+      # against every page. Any violation fails this job and blocks the deploy.
+      - name: Check accessibility
+        run: |
+          python3 -m http.server 8080 --directory _site >/dev/null 2>&1 &
+          sleep 1
+          urls=$(find _site -name '*.html' | sort | sed -e 's|^_site|http://localhost:8080|' -e 's|/index.html$|/|')
+          echo "$urls"
+          npx --yes pa11y-ci@4 --config .pa11yci.json $urls
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site

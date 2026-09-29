@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+<section class="hero wrap">
+	<p class="eyebrow">{{ hero.eyebrow }}</p>
+	<div class="lead">{{ hero.text | renderContent("md") | safe }}</div>
+</section>
+{% set item = hero %}{% set sizes = "100vw" %}{% set eager = true %}
+<div class="hero-photo">{% include "photo.njk" %}</div>
+{% set sizes = none %}{% set eager = false %}
+
+{% for item in sections %}
+<section id="{{ item.id }}" class="feature wrap{% if loop.index is even %} feature--flip{% endif %}">
+	{% include "photo.njk" %}
+	<div class="feature-text">
+		<p class="eyebrow">{{ item.eyebrow }}</p>
+		{{ item.text | renderContent("md") | safe }}
+		{% if item.button %}<a class="button" href="{{ item.button.href }}">{{ item.button.label }}</a>{% endif %}
+	</div>
+</section>
+{% endfor %}
+
+<section id="{{ callout.id }}" class="callout">
+	<div class="wrap">
+		<p class="eyebrow">{{ callout.eyebrow }}</p>
+		{{ callout.text | renderContent("md") | safe }}
+		<a class="button" href="{{ callout.button.href }}">{{ callout.button.label }}</a>
+	</div>
+</section>

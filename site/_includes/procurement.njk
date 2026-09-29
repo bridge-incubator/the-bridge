@@ -1,0 +1,33 @@
+---
+layout: base.njk
+---
+<section class="hero wrap">
+	<p class="eyebrow">Procurement</p>
+	<h1>{{ heading }}</h1>
+	<p class="lead">{{ intro }}</p>
+</section>
+
+<section class="wrap cards">
+	{% for v in vehicles %}
+	<article class="card">
+		<h2>{{ v.name }}</h2>
+		<p class="meta">{{ v.issuer }}</p>
+		{{ v.description | renderContent("md") | safe }}
+		<ul>
+			{% for d in v.details %}<li>{{ d }}</li>{% endfor %}
+		</ul>
+		<a class="more" href="{{ v.link.href }}" rel="noopener">{{ v.link.label }}</a>
+	</article>
+	{% endfor %}
+</section>
+
+<section class="callout">
+	<div class="wrap callout-split">
+		<div>
+			<p class="eyebrow">{{ contact.eyebrow }}</p>
+			<h2>{{ contact.heading }}</h2>
+			<p>{{ contact.text }}</p>
+		</div>
+		{% set subject = contact.subject %}{% include "email.njk" %}
+	</div>
+</section>

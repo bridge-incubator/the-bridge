@@ -1,0 +1,365 @@
+/* The Bridge — the whole site's styling lives in this one file.
+   Colors come from the original Skeleton "Vox" theme. */
+
+:root {
+	--ink: oklch(30% 0.07 302);
+	--ink-soft: oklch(45% 0.05 302);
+	--paper: oklch(98.5% 0.008 60);
+	--paper-deep: oklch(95.5% 0.015 60);
+	--line: oklch(88% 0.02 300);
+	--peach: oklch(82.71% 0.1 51.5);
+	--lime: oklch(92.54% 0.17 123.36);
+	--lavender: oklch(80.24% 0.12 298.53);
+	--accent: oklch(43.8% 0.14 291.24);
+
+	--font: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	--wrap: 72rem;
+	--gutter: clamp(1rem, 4vw, 2.5rem);
+	--space: clamp(4rem, 10vw, 8rem);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--ink: oklch(94% 0.02 300);
+		--ink-soft: oklch(78% 0.03 300);
+		--paper: oklch(19% 0.03 300);
+		--paper-deep: oklch(23% 0.04 300);
+		--line: oklch(33% 0.04 300);
+		--accent: oklch(80.24% 0.12 298.53);
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font);
+	font-size: 1.125rem;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-underline-offset: 0.2em;
+}
+
+h1,
+h2 {
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	margin: 0 0 1rem;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+strong {
+	font-weight: 600;
+}
+
+.wrap {
+	max-width: var(--wrap);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.eyebrow {
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	margin-bottom: 1.25rem;
+}
+
+.lead,
+.lead p {
+	font-size: clamp(1.375rem, 2.6vw, 2rem);
+	font-weight: 300;
+	line-height: 1.35;
+	max-width: 40ch;
+	text-wrap: pretty;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.85rem 1.5rem;
+	background: var(--ink);
+	color: var(--paper);
+	font-family: var(--mono);
+	font-size: 0.875rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 999px;
+	transition: opacity 0.15s;
+}
+
+.button:hover {
+	opacity: 0.85;
+}
+
+/* Header */
+
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding-block: 1.5rem;
+}
+
+.site-header .site-logo svg {
+	width: 7.5rem;
+}
+
+.site-header nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.25rem 1.5rem;
+	font-size: 0.9375rem;
+}
+
+.site-header nav a {
+	text-decoration: none;
+}
+
+.site-header nav a:hover {
+	text-decoration: underline;
+}
+
+/* Hero */
+
+.hero {
+	padding-block: clamp(3rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero .lead {
+	max-width: 32ch;
+}
+
+.hero-photo .photo {
+	aspect-ratio: 21 / 9;
+	max-height: 70vh;
+	width: 100%;
+}
+
+/* Photos are grayscale and take a color tint from behind. */
+
+.photo {
+	margin: 0;
+	overflow: hidden;
+	background: var(--tint, var(--peach));
+}
+
+.photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	mix-blend-mode: multiply;
+}
+
+.tint-peach {
+	--tint: var(--peach);
+}
+
+.tint-lime {
+	--tint: var(--lime);
+}
+
+.tint-lavender {
+	--tint: var(--lavender);
+}
+
+/* Home page feature sections: photo beside text, alternating sides. */
+
+.feature {
+	display: grid;
+	gap: 2rem;
+	align-items: center;
+	padding-block: var(--space) 0;
+}
+
+.feature .photo {
+	aspect-ratio: 4 / 3;
+}
+
+.feature-text p:not(.eyebrow) {
+	font-size: clamp(1.25rem, 2vw, 1.5rem);
+	font-weight: 300;
+	line-height: 1.45;
+}
+
+@media (min-width: 60rem) {
+	.feature {
+		grid-template-columns: 1fr 1fr;
+		gap: 5rem;
+	}
+
+	.feature--flip .photo {
+		order: 2;
+	}
+}
+
+/* Full-width colored band. */
+
+.callout {
+	margin-top: var(--space);
+	padding-block: clamp(3rem, 8vw, 6rem);
+	background: var(--lime);
+	color: oklch(25% 0.06 302);
+}
+
+.callout .eyebrow {
+	color: inherit;
+	opacity: 0.75;
+}
+
+.callout p:not(.eyebrow) {
+	font-size: clamp(1.25rem, 2vw, 1.5rem);
+	font-weight: 300;
+	line-height: 1.45;
+	max-width: 44ch;
+}
+
+.callout .button {
+	background: oklch(25% 0.06 302);
+	color: var(--lime);
+}
+
+.callout-split {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+.email-address {
+	font-family: var(--mono);
+	font-size: 0.875rem !important;
+	margin-top: 0.75rem;
+}
+
+/* Procurement cards */
+
+.cards {
+	display: grid;
+	gap: 1.5rem;
+}
+
+@media (min-width: 60rem) {
+	.cards {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+	background: var(--paper-deep);
+	border-top: 4px solid var(--peach);
+}
+
+.card:nth-child(2) {
+	border-top-color: var(--lavender);
+}
+
+.card .meta {
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+	color: var(--ink-soft);
+}
+
+.card ul {
+	padding-left: 1.25rem;
+	margin: 0 0 1.5rem;
+}
+
+.card li + li {
+	margin-top: 0.5rem;
+}
+
+.card .more {
+	margin-top: auto;
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+/* Footer */
+
+.site-footer {
+	padding-block: 4rem 3rem;
+	font-size: 1rem;
+}
+
+.site-footer .site-logo svg {
+	width: 9rem;
+	margin-bottom: 2.5rem;
+}
+
+.footer-columns {
+	display: grid;
+	gap: 1.5rem 3rem;
+	max-width: 56rem;
+	color: var(--ink-soft);
+}
+
+@media (min-width: 45rem) {
+	.footer-columns {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--line);
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+}
+
+.social {
+	display: flex;
+	gap: 1rem;
+}
+
+.social a:hover {
+	opacity: 0.7;
+}
