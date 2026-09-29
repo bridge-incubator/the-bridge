@@ -1,6 +1,5 @@
 <script lang="ts">
 	import BridgeLogo from '$lib/assets/the_bridge_logo.svg?component';
-	import MinneapolisFoundationLogo from '$lib/assets/minneapolis-foundation.svg?component';
 </script>
 
 <main>
@@ -64,7 +63,7 @@
 			<div
 				class="justify-content flex min-h-[95vh] w-full flex-col justify-center bg-tertiary-50-950/80 p-8 text-left text-tertiary-contrast-50-950 backdrop-blur-sm sm:w-xl md:w-2xl"
 			>
-				<h1 class="mb-6 font-mono text-lg text-tertiary-950-50 uppercase">Work with us</h1>
+				<h1 class="mb-6 font-mono text-lg text-tertiary-950-50 uppercase">Build with us</h1>
 				<p class=" text-2xl font-light md:text-3xl">
 					<span class="font-semibold"
 						>The Bridge is seeking bold ideas for high-impact projects.</span
@@ -86,29 +85,21 @@
 	</section>
 
 	<section
-		id="donate"
+		id="procurement"
 		class="mb-2 min-h-[95vh] w-full preset-filled-primary-500 bg-[url(https://imagedelivery.net/KssI4mUfPYbQYyGEXZ6Jlg/bf6ed939-5991-4d76-e824-6b870a7b5a00/2500)] bg-cover bg-center bg-blend-multiply"
 	>
 		<div class="mx-auto flex justify-end xl:container">
 			<div
 				class="justify-content flex min-h-[95vh] w-full flex-col justify-center bg-primary-50-950/80 p-8 text-left text-primary-contrast-50-950 backdrop-blur-sm sm:w-xl md:w-2xl"
 			>
-				<h1 class="mb-6 font-mono text-lg text-primary-950-50 uppercase">Support us</h1>
-				<div class="mb-6 max-w-80 text-[#EB2121] dark:text-[#ffffff]">
-					<MinneapolisFoundationLogo class="fill-current"></MinneapolisFoundationLogo>
-				</div>
+				<h1 class="mb-6 font-mono text-lg text-primary-950-50 uppercase">Procure our services</h1>
 				<p class="text-2xl font-light md:text-3xl">
-					The Bridge is made possible via fiscal sponsorship from The Minneapolis Foundation.
-					<span class=" text-2xl font-semibold md:text-3xl"
-						>Donate to The Bridge to support our work.</span
-					>
+					<span class="font-semibold">Government teams can work with The Bridge through established procurement vehicles.</span>
+					We partner with you to identify the right path, scope an engagement, and get work underway without starting from scratch.
 				</p>
 				<a
-					class="mt-8"
-					href="https://tmf.iphiview.com/tmf/DonatetoAnotherFund/OnlineDonation/tabid/384/dispatch/contribution_id$591478_hash$ffd44d0f6400c0690dbeaf92feb241c2eeff736e/Default.aspx"
-					><button type="button" class="btn preset-filled-primary-950-50 btn-lg font-bold uppercase"
-						>Donate</button
-					></a
+					class="btn preset-filled-primary-950-50 btn-lg mt-8 self-start font-bold uppercase"
+					href="/procurement">View procurement options</a
 				>
 			</div>
 		</div>
