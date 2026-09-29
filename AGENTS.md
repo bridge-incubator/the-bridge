@@ -10,6 +10,8 @@ pnpm build   # writes _site/
 
 Pushing to `main` builds the site, checks accessibility, then deploys to GitHub Pages (`.github/workflows/site.yml`). Pull requests run the same build and check without deploying.
 
+Every pull request also gets a preview build on Cloudflare Pages (project `the-bridge`, preview only; the live site stays on GitHub Pages). Cloudflare comments the preview URL on the PR. Share that link for review instead of running the site locally.
+
 ## Accessibility
 
 Every built page is checked with [Pa11y CI](https://github.com/pa11y/pa11y-ci) against WCAG 2 AA, using both the axe and HTML_CodeSniffer runners (`.pa11yci.json`). Any violation fails the workflow and blocks the deploy. To run it locally after `pnpm build`:
