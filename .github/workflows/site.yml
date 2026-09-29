@@ -6,18 +6,23 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Every job starts read-only; the deploy job asks for the extra access it needs.
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
         with:
           version: 10
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
-          cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
 
@@ -29,26 +34,38 @@ jobs:
           sleep 1
           urls=$(find _site -name '*.html' | sort | sed -e 's|^_site|http://localhost:8080|' -e 's|/index.html$|/|')
           echo "$urls"
-          npx --yes pa11y-ci@4 --config .pa11yci.json $urls
+          npx --yes pa11y-ci@4.1.1 --config .pa11yci.json $urls
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          name: site
           path: _site
-          include-hidden-files: true
+
+  # Audits these workflow files for insecure patterns (unpinned actions,
+  # excess permissions, script injection). Findings fail the job and block the deploy.
+  workflow-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: zizmorcore/zizmor-action@cc914d7f3750a2d13d75c7f184a1060aa0e9d482 # v0.6.4
+        with:
+          version: 1.30.1
+          advanced-security: false
 
   deploy:
-    needs: build
+    needs: [build, workflow-audit]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      pages: write # publish the build to GitHub Pages
+      id-token: write # lets deploy-pages prove the build came from this workflow
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: _site
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: _site
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
