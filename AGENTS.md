@@ -8,7 +8,18 @@ pnpm dev     # http://localhost:8080, reloads on save
 pnpm build   # writes _site/
 ```
 
-Pushing to `main` deploys to GitHub Pages (`.github/workflows/deploy.yml`).
+Pushing to `main` builds the site, checks accessibility, then deploys to GitHub Pages (`.github/workflows/site.yml`). Pull requests run the same build and check without deploying.
+
+## Accessibility
+
+Every built page is checked with [Pa11y CI](https://github.com/pa11y/pa11y-ci) against WCAG 2 AA, using both the axe and HTML_CodeSniffer runners (`.pa11yci.json`). Any violation fails the workflow and blocks the deploy. To run it locally after `pnpm build`:
+
+```sh
+python3 -m http.server 8080 --directory _site &
+npx pa11y-ci@4 --config .pa11yci.json http://localhost:8080/ http://localhost:8080/procurement/
+```
+
+Automated checks miss things. After changing layout or interaction, also tab through the page with the keyboard and check it with a screen reader (VoiceOver on macOS).
 
 ## Where things are
 
