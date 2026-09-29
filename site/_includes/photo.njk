@@ -1,0 +1,10 @@
+{#- A tinted, responsive photo. Expects `item` with photo, alt and tint. -#}
+<figure class="photo tint-{{ item.tint }}">
+	<img
+		src="/assets/img/{{ item.photo }}-1600.webp"
+		srcset="/assets/img/{{ item.photo }}-800.webp 800w, /assets/img/{{ item.photo }}-1600.webp 1600w, /assets/img/{{ item.photo }}-2400.webp 2400w"
+		sizes="{{ sizes or '(min-width: 60rem) 50vw, 100vw' }}"
+		alt="{{ item.alt }}"
+		{% if not eager %}loading="lazy"{% endif %}
+		decoding="async">
+</figure>

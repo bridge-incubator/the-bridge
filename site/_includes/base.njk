@@ -1,0 +1,52 @@
+{%- set siteTitle = "The Bridge - Digital Solutions for Nonprofits and Government" -%}
+{%- set siteDescription = "The Bridge partners with nonprofits and government to build human-centered software that improves public services." -%}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ title or siteTitle }}</title>
+	<meta name="description" content="{{ description or siteDescription }}">
+	<link rel="icon" href="/assets/img/favicon.svg">
+	<link rel="icon" href="/assets/img/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+	<link rel="stylesheet" href="/assets/style.css">
+	<meta property="og:title" content="{{ title or siteTitle }}">
+	<meta property="og:description" content="{{ description or siteDescription }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://bridgecivictech.org{{ page.url }}">
+	<meta property="og:image" content="https://bridgecivictech.org/assets/img/bridge-share.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<script src="/assets/email.js" defer></script>
+</head>
+<body>
+	<header class="site-header wrap">
+		<a href="/" class="site-logo" aria-label="The Bridge home">{% include "logo.svg" %}</a>
+		<nav>
+			<a href="/#whoweare">About</a>
+			<a href="/#workwithus">Build with us</a>
+			<a href="/procurement/">Procurement</a>
+		</nav>
+	</header>
+
+	<main>
+		{{ content | safe }}
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<div class="site-logo">{% include "logo.svg" %}</div>
+			<div class="footer-columns">
+				<p>The Bridge is a new incubator and accelerator for building mission-driven startups, nonprofits, and scalable infrastructure for the public.</p>
+				<p>Built by technologists formerly at 18F and the Technology Transformation Service (TTS) in the Federal Government.</p>
+			</div>
+			<div class="footer-bottom">
+				<span>© The Bridge {{ year }}</span>
+				<span class="social">
+					<a href="https://bsky.app/profile/bridgecivictech.bsky.social" rel="me" aria-label="Bluesky">{% include "icons/bluesky.svg" %}</a>
+					<a href="https://www.linkedin.com/company/the-bridge-civic-tech" rel="me" aria-label="LinkedIn">{% include "icons/linkedin.svg" %}</a>
+				</span>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

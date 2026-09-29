@@ -1,20 +1,11 @@
-## Developing
+# bridgecivictech.org
 
-Once you've installed dependencies with `pnpm install`, start a development server:
-
-```sh
-pnpm run dev
-
-# or start the server and open the app in a new browser tab
-pnpm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+The website for The Bridge, built with Eleventy and deployed to GitHub Pages.
 
 ```sh
-pnpm run build
+pnpm install
+pnpm dev     # local preview at http://localhost:8080
+pnpm build   # writes _site/
 ```
 
-You can preview the production build with `pnpm run preview`.
+See [AGENTS.md](AGENTS.md) for where things live and how to edit them.
